@@ -23,6 +23,13 @@
     </url>
 
     <url>
+        <loc>http://www.icnws.com/tags/Thymeleaf/</loc>
+        <lastmod>2018-03-15T06:27:28.448Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.icnws.com/tags/Feed/</loc>
         <lastmod>2018-03-15T06:27:28.448Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,13 +38,6 @@
 
     <url>
         <loc>http://www.icnws.com/tags/RSS/</loc>
-        <lastmod>2018-03-15T06:27:28.448Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.icnws.com/tags/Thymeleaf/</loc>
         <lastmod>2018-03-15T06:27:28.448Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -352,14 +352,14 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/tags/Code-Bugs/</loc>
+        <loc>http://www.icnws.com/tags/MYSQL/</loc>
         <lastmod>2018-03-15T06:27:28.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.icnws.com/tags/MYSQL/</loc>
+        <loc>http://www.icnws.com/tags/Code-Bugs/</loc>
         <lastmod>2018-03-15T06:27:28.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
