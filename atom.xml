@@ -41,6 +41,32 @@
   </entry>
   
   <entry>
+    <title>使用npm小技巧</title>
+    <link href="http://www.icnws.com/2018/2018%E4%BD%BF%E7%94%A8npm%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>http://www.icnws.com/2018/2018使用npm小技巧/</id>
+    <published>2018-10-23T23:19:05.000Z</published>
+    <updated>2018-10-24T08:19:18.872Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>使用npm经常会遇到加载某个依赖加载不了，所以需要用国内的淘宝镜像</p><p>然而，将npm改成cnpm是极不习惯的，所以看到nrm就赶紧记下来了，极是好用！</p><h3 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h3><h4 id="安装nrm"><a href="#安装nrm" class="headerlink" title="安装nrm"></a>安装nrm</h4><p><code>npm install nrm -g --registry=https://registry.npm.taobao.org</code></p><h4 id="查看镜像"><a href="#查看镜像" class="headerlink" title="查看镜像"></a>查看镜像</h4><p><code>nrm ls</code></p><p>结果如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* npm ---- https://registry.npmjs.org/</span><br><span class="line">  cnpm --- http://r.cnpmjs.org/</span><br><span class="line">  taobao - https://registry.npm.taobao.org/</span><br><span class="line">  nj ----- https://registry.nodejitsu.com/</span><br><span class="line">  rednpm - http://registry.mirror.cqupt.edu.cn/</span><br><span class="line">  npmMirror  https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm - http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure></p><h3 id="使用镜像"><a href="#使用镜像" class="headerlink" title="使用镜像"></a>使用镜像</h3><p><code>nrm use taobao</code></p><p>通过命令<code>nrm ls</code>可以看到，镜像已经是taobao了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  npm ---- https://registry.npmjs.org/</span><br><span class="line">  cnpm --- http://r.cnpmjs.org/</span><br><span class="line">* taobao - https://registry.npm.taobao.org/</span><br><span class="line">  nj ----- https://registry.nodejitsu.com/</span><br><span class="line">  rednpm - http://registry.mirror.cqupt.edu.cn/</span><br><span class="line">  npmMirror  https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm - http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure></p><p>接下来就可以正常用npm安装依赖了，都很方便。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;p&gt;使用npm经常会遇到加载某个依赖加载不了，所以需要用国内的淘宝镜像&lt;/p&gt;
+&lt;p&gt;然而，将npm改成cnpm是极不习惯的，所以看到nrm就赶
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.icnws.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="NPM" scheme="http://www.icnws.com/tags/NPM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用阿里云RAM的子账号管理MQ服务</title>
     <link href="http://www.icnws.com/2017/152-using-aliyun-mq/"/>
     <id>http://www.icnws.com/2017/152-using-aliyun-mq/</id>
@@ -229,30 +255,6 @@
       <category term="Spring Boot" scheme="http://www.icnws.com/tags/Spring-Boot/"/>
     
       <category term="Quartz" scheme="http://www.icnws.com/tags/Quartz/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读《非暴力沟通》</title>
-    <link href="http://www.icnws.com/2017/144-read-nonviolent-communication/"/>
-    <id>http://www.icnws.com/2017/144-read-nonviolent-communication/</id>
-    <published>2017-08-21T14:31:30.000Z</published>
-    <updated>2018-03-15T06:27:28.448Z</updated>
-    
-    <content type="html"><![CDATA[<p>​    最近，比较忙也比较懒，所以读书不太多，只是读了这本鸡汤成分略大的书，《非暴力沟通》，讲的就是如何去避免直接使用暴力去诉诸对抗的行为方法论。有一定的启发，毕竟，我们的文化形态，惯用的是指责、问责，很少关注其他的东西。</p><p><img src="/uploads/2017/fblgt.jpg" alt=""></p><h3 id="书名：非暴力沟通"><a href="#书名：非暴力沟通" class="headerlink" title="书名：非暴力沟通"></a>书名：非暴力沟通</h3><p>看书名就知道，和沟通有关，大多数急于在社交上、生活上沟通有问题的，或者觉得有问题的，一般会寻求这类书籍的帮助。我呢，是因为这本书在微信读书APP里躺了很久，而且不会因为时间不连续导致思路跟不上的问题，所以就看了。</p><p>书中大部分篇幅就是将什么是非暴力沟通，如何体验非暴力沟通，以及怎么持续下去，最终讲了关于一个长辈一辈子践行非暴力沟通的例子，也道出了作者非暴力沟通的榜样。</p><h3 id="事实"><a href="#事实" class="headerlink" title="事实"></a>事实</h3><p>事实就是，这本书用起来需要勇气，大多数时间感觉沟通拖拖拉拉，不能快速的解决问题。然而，从作者的例子我们有一个这样的体验，慢即是快。这是怎么样的体验呢？就是说通过慢的沟通表达抓住主要的问题和症结，对症下药了，然后很多问题和需要就迎刃而解。</p><p>这个很好理解，越来越多的时候，我们发现做事情很容易，将事情表达清楚却很困难。程序员经常遇到产品、美工、领导说的A，实际他们想要的是B，结果是我们做的C，再三沟通才能回到最初的需求，最初的想法，最终的目的，这时候浪费了很多时间。这中间如果出了问题，也大多是指责某一环节的某个人的决策，而很少考虑自己是否真正承担了应该承担的角色以及责任。</p><h3 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h3><p>这本书的最大收获就是，换一个视角，表达和发现需要，而不是指责和狂怒，甚至逃避责任。</p><p>我们在工作的时候，大多数是对结果负责，实际上，大多数结果我们需要由别人替我们承担。这是为什么？</p><p>原因无他，我们只知道最终要实现一个什么东西，不知道这个东西是哪个需求来的，最终目的是什么，只是知道完成系统中的那一环，其他的并不怎么关注。因此，我们把失败归功于上层的决定，推诿给其他人。这是很多人的做法，也是很多人平庸甚至沦为平庸的根源之一。</p><p>换一个角度，从源头去思考我们做的每一件事情，试图去追溯事情的根源，明白发生了什么，需要我们去做什么，怎么才能将我们的工作做的更好更出色，这也是我想告诉你的。</p><p>你的每一次偷懒都会有人给你记着，都会成为未来你成长发展的坎坷，所以春光大好多努力呀！</p><hr><p>你有没有想看这本书？欢迎留言交流！</p>]]></content>
-    
-    <summary type="html">
-    
-      这是一本关于沟通的书，也是鸡汤，不过总体来说还算可以，给你一个新的视角来看待问题。
-    
-    </summary>
-    
-      <category term="读书" scheme="http://www.icnws.com/categories/%E8%AF%BB%E4%B9%A6/"/>
-    
-    
-      <category term="阅读" scheme="http://www.icnws.com/tags/%E9%98%85%E8%AF%BB/"/>
-    
-      <category term="沟通" scheme="http://www.icnws.com/tags/%E6%B2%9F%E9%80%9A/"/>
     
   </entry>
   

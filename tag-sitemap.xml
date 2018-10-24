@@ -163,14 +163,14 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/tags/%E4%BA%A7%E5%93%81/</loc>
+        <loc>http://www.icnws.com/tags/%E8%81%8C%E4%B8%9A/</loc>
         <lastmod>2018-03-15T06:27:28.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.icnws.com/tags/%E8%81%8C%E4%B8%9A/</loc>
+        <loc>http://www.icnws.com/tags/%E4%BA%A7%E5%93%81/</loc>
         <lastmod>2018-03-15T06:27:28.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -690,6 +690,13 @@
     <url>
         <loc>http://www.icnws.com/tags/MiniProgram/</loc>
         <lastmod>2018-10-24T02:28:39.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.icnws.com/tags/NPM/</loc>
+        <lastmod>2018-10-24T08:19:18.872Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

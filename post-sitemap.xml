@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.icnws.com/2018/2018%E4%BD%BF%E7%94%A8npm%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+        <lastmod>2018-10-24T08:19:18.872Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.icnws.com/2018/2018%E4%B8%80%E5%9B%BE%E5%88%86%E6%9E%90%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%BA%E6%B0%91%E7%A4%BE%E5%8C%BAlite/</loc>
         <lastmod>2018-10-24T02:28:39.409Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -255,7 +263,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-update/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-specificationfact-util/</loc>
         <lastmod>2018-03-15T06:27:28.490Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -263,7 +271,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-specificationfact-util/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-update/</loc>
         <lastmod>2018-03-15T06:27:28.490Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -311,7 +319,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-applying-query-hints/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-basic-config/</loc>
         <lastmod>2018-03-15T06:27:28.487Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -319,7 +327,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-basic-config/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-applying-query-hints/</loc>
         <lastmod>2018-03-15T06:27:28.487Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -335,7 +343,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-Specification-1st/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-Specification-2nd/</loc>
         <lastmod>2018-03-15T06:27:28.486Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -343,7 +351,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/spring-data-jpa-Specification-2nd/</loc>
+        <loc>http://www.icnws.com/2017/spring-data-jpa-Specification-1st/</loc>
         <lastmod>2018-03-15T06:27:28.486Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -711,7 +719,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/jenkins-sonar-setup-and-config/</loc>
+        <loc>http://www.icnws.com/2017/just-lack-a-producter/</loc>
         <lastmod>2018-03-15T06:27:28.468Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -719,7 +727,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/just-lack-a-producter/</loc>
+        <loc>http://www.icnws.com/2017/jenkins-sonar-setup-and-config/</loc>
         <lastmod>2018-03-15T06:27:28.468Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -759,7 +767,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/jenkins-env-config/</loc>
+        <loc>http://www.icnws.com/2017/jenkins-create-a-job/</loc>
         <lastmod>2018-03-15T06:27:28.466Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -767,7 +775,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2017/jenkins-create-a-job/</loc>
+        <loc>http://www.icnws.com/2017/jenkins-env-config/</loc>
         <lastmod>2018-03-15T06:27:28.466Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -991,7 +999,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2016/bad-double-11/</loc>
+        <loc>http://www.icnws.com/2016/become-professionals/</loc>
         <lastmod>2018-03-15T06:27:28.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -999,7 +1007,7 @@
     </url>
 
     <url>
-        <loc>http://www.icnws.com/2016/become-professionals/</loc>
+        <loc>http://www.icnws.com/2016/bad-double-11/</loc>
         <lastmod>2018-03-15T06:27:28.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -1159,6 +1167,14 @@
     </url>
 
     <url>
+        <loc>http://www.icnws.com/2017/132-generation-password-desigin-1st/</loc>
+        <lastmod>2018-03-15T06:27:28.446Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.icnws.com/2016/1-code-bugs-1/</loc>
         <lastmod>2018-03-15T06:27:28.446Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1168,14 +1184,6 @@
 
     <url>
         <loc>http://www.icnws.com/2017/133-trace-route-dns/</loc>
-        <lastmod>2018-03-15T06:27:28.446Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.icnws.com/2017/132-generation-password-desigin-1st/</loc>
         <lastmod>2018-03-15T06:27:28.446Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
