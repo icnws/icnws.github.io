@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icnws.com/"/>
-  <updated>2018-03-15T06:27:28.452Z</updated>
+  <updated>2018-10-24T02:28:39.409Z</updated>
   <id>http://www.icnws.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一图分析小程序-人民社区lite</title>
+    <link href="http://www.icnws.com/2018/2018%E4%B8%80%E5%9B%BE%E5%88%86%E6%9E%90%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%BA%E6%B0%91%E7%A4%BE%E5%8C%BAlite/"/>
+    <id>http://www.icnws.com/2018/2018一图分析小程序-人民社区lite/</id>
+    <published>2018-10-24T02:19:05.000Z</published>
+    <updated>2018-10-24T02:28:39.409Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>对小程序-人民社区lite的前后端进行了简单的分析<br><a id="more"></a></p><h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="/uploads/2018/人民社区.jpg" alt="人民社区"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;对小程序-人民社区lite的前后端进行了简单的分析&lt;br&gt;
+    
+    </summary>
+    
+      <category term="产品" scheme="http://www.icnws.com/categories/%E4%BA%A7%E5%93%81/"/>
+    
+    
+      <category term="Wechat" scheme="http://www.icnws.com/tags/Wechat/"/>
+    
+      <category term="MiniProgram" scheme="http://www.icnws.com/tags/MiniProgram/"/>
+    
+  </entry>
   
   <entry>
     <title>使用阿里云RAM的子账号管理MQ服务</title>
@@ -229,32 +253,6 @@
       <category term="阅读" scheme="http://www.icnws.com/tags/%E9%98%85%E8%AF%BB/"/>
     
       <category term="沟通" scheme="http://www.icnws.com/tags/%E6%B2%9F%E9%80%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是怎么阅读新闻的</title>
-    <link href="http://www.icnws.com/2017/143-how-do-I-read-the-news/"/>
-    <id>http://www.icnws.com/2017/143-how-do-I-read-the-news/</id>
-    <published>2017-08-17T04:31:30.000Z</published>
-    <updated>2018-03-15T06:27:28.448Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、通常做法："><a href="#1、通常做法：" class="headerlink" title="1、通常做法："></a>1、通常做法：</h3><p>大多数人的做法是安装N个客户端，比如网易新闻、今日头条、腾讯新闻等，这些新闻APP的运营会不定时的推送一些新鲜资讯，我们在手机上收到推送之后，点开消息，接着就进入APP，一进去就半个小时过去了，最终可能发现自己只是看了几个搞笑或者故意吸引眼球的各种奇闻疑案，并没有太多的收获。</p><p>特别是像进入头条这种APP，根据用户的“喜好”来匹配内容，判断你喜好的标准可能是自己贴的标签，自己浏览的信息（包括误点操作），我用了几次，感觉都是TM的垃圾信息，很难看到有用的，于是，我就不浪费生命，直接将所有这类新闻APP。</p><h3 id="2、事实"><a href="#2、事实" class="headerlink" title="2、事实"></a>2、事实</h3><p>事实是，每家新闻APP都以各种方式留住你，给你广告，给你垃圾信息，让你长时间的呆在他们的APP里，沉浸下去，为他们的广告用户做背书，然后消磨掉你的时间，为APP公司挣钱。如果你从中得到了益处，那也还好，但是事实是，为了吸引你的眼球，各种性的暗示图文，各种清宫疑案，城市琐事等等，没有什么有营养的东西。</p><p>很多运营人员，为了业绩，为了KPI好看，不择手段，甚至虚假信息，这是我最厌恶的地方。</p><h3 id="3、我的做法"><a href="#3、我的做法" class="headerlink" title="3、我的做法"></a>3、我的做法</h3><p>卸载这些新闻APP，选择通过邮件定义的方式阅读有用的资讯，比如好奇心日报，这样可以少阅读百分之九十的垃圾信息，对一些重要的信息并不怎么遗漏，只是少了一些花边新闻可将而已。话说回来，花边新闻只能让你的逼格降低，并无益处，一时的附和可能是背后的厌恶，说你恶趣味，提升品位也很重要。</p><p>为什么是好奇心日报？</p><p>好奇心日报也不是我的第一选择，像爱范儿、36Kr等我都有试过，事实是很不理想，不能达到我对新闻资讯纯净高效率的要求，好奇心日报可以很好的满足。</p><p>好奇心日报的推送频率不高，手机端自适应排版，信息相对有效性高，热点话题、大公司头条、看图等都是很好看的栏目，一文看尽时鲜，用了有两周吧，很舒爽，所以要些这篇文章推荐给你，提高你的效率，为有限的生命增值。</p><h3 id="4、实现方案"><a href="#4、实现方案" class="headerlink" title="4、实现方案"></a>4、实现方案</h3><p>微信+QQ邮箱+IFTTT服务，即RSS订阅好奇心日报，通过IFTTT推送到QQ邮箱，在微信内打开设置里的QQ邮箱提醒，这样好奇心日报一发布订阅消息，我们很快就能在微信的QQ邮箱提醒里看到邮件了，方便的时候就阅读吧。具体步骤如下：</p><h4 id="4-1、注册IFTTT"><a href="#4-1、注册IFTTT" class="headerlink" title="4.1、注册IFTTT"></a>4.1、注册IFTTT</h4><p>用QQ邮箱在网站<a href="https://ifttt.com/" target="_blank" rel="noopener">https://ifttt.com/</a> 注册一个账号，注意要完整实现有效订阅阅读，这一步很重要。注册成功后登录网站。</p><h4 id="4-2、添加Applet"><a href="#4-2、添加Applet" class="headerlink" title="4.2、添加Applet"></a>4.2、添加Applet</h4><p>找到顶部的“My Applets”并点击，然后找到New Applet，创建一个RSS订阅,点击会出现下图：</p><p><img src="/uploads/2017/if-1.jpg" alt=""></p><p>点击“+this”，然后选择“RSS Feed”，然后选择一个trigger，这里选择第一个“New feed item”，填写Feed URL：<a href="http://www.qdaily.com/feed.xml" target="_blank" rel="noopener">http://www.qdaily.com/feed.xml</a> ,点击create trigger，会出现下图：</p><p><img src="/uploads/2017/if-2.jpg" alt=""></p><p>我们看得“+this”已经被替换成RSS的icon了，然后选择“+that”，在新的页面选择Email，在Choose action页面选择“Send me an email”，然后会出现新的界面，如下所示，会有基本的推送样式，推送邮箱是Base Email，这也是为啥用QQ邮箱注册。</p><p><img src="/uploads/2017/if-3.jpg" alt=""></p><p>在这个页面下，选择“Create Action”即生成对应的订阅，进入最终页面，点击Finish即完成创建：</p><p><img src="/uploads/2017/if-4.jpg" alt=""></p><p>至此，我们就完成了IFTTT订阅RSS的所有操作，等待新的Feed发出后，我们就能收到对应的邮件。</p><p><strong>重要的提醒：IFTTT默认是将所有URL转换成短链接的，因此要手动关闭掉，方法如下：</strong></p><p>在IFTTT的右上角点击用户名，选择Setting，进入新页面后下拉，找到URL shortening，将默认自动转成短链接的复选框点掉即可，然后保存设置，这样收到的邮件才是在国内能正常打开的。</p><p>当然，IFTTT还有很多强大的功能，他其实就是一个搬运工，帮我们做一些需要费时费力的搬运工作，像快递一样，我还会配合IFTTT的Do Note客户端进行发推，这个你可以自己摸索。</p><h4 id="4-3、微信设置"><a href="#4-3、微信设置" class="headerlink" title="4.3、微信设置"></a>4.3、微信设置</h4><p>打开微信的设置，找到通用，选择功能，找到QQ邮箱提醒功能并开启就可以等着新鲜有用的资讯新闻了。</p><hr><p>这就是我阅读新闻资讯的方法，你学到了吗？欢迎留言交流！</p>]]></content>
-    
-    <summary type="html">
-    
-      阅读新闻有技巧，怎么高效？讲讲我是怎么阅读的
-    
-    </summary>
-    
-      <category term="杂谈" scheme="http://www.icnws.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="阅读" scheme="http://www.icnws.com/tags/%E9%98%85%E8%AF%BB/"/>
-    
-      <category term="Feed" scheme="http://www.icnws.com/tags/Feed/"/>
-    
-      <category term="RSS" scheme="http://www.icnws.com/tags/RSS/"/>
     
   </entry>
   
