@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用npm小技巧]]></title>
+    <url>%2F2018%2F2018%E4%BD%BF%E7%94%A8npm%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[背景使用npm经常会遇到加载某个依赖加载不了，所以需要用国内的淘宝镜像 然而，将npm改成cnpm是极不习惯的，所以看到nrm就赶紧记下来了，极是好用！ 安装使用安装nrmnpm install nrm -g --registry=https://registry.npm.taobao.org 查看镜像nrm ls 结果如下1234567* npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/ taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 使用镜像nrm use taobao 通过命令nrm ls可以看到，镜像已经是taobao了1234567 npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/* taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 接下来就可以正常用npm安装依赖了，都很方便。]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>NPM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一图分析小程序-人民社区lite]]></title>
     <url>%2F2018%2F2018%E4%B8%80%E5%9B%BE%E5%88%86%E6%9E%90%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E4%BA%BA%E6%B0%91%E7%A4%BE%E5%8C%BAlite%2F</url>
     <content type="text"><![CDATA[简介对小程序-人民社区lite的前后端进行了简单的分析 思维导图]]></content>
@@ -10,17 +21,6 @@
       <tags>
         <tag>Wechat</tag>
         <tag>MiniProgram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[使用npm小技巧]]></title>
-    <url>%2F2018%2F2018%E4%BD%BF%E7%94%A8npm%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[背景使用npm经常会遇到加载某个依赖加载不了，所以需要用国内的淘宝镜像 然而，将npm改成cnpm是极不习惯的，所以看到nrm就赶紧记下来了，极是好用！ 安装使用安装nrmnpm install nrm -g --registry=https://registry.npm.taobao.org 查看镜像nrm ls 结果如下1234567* npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/ taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 使用镜像nrm use taobao 通过命令nrm ls可以看到，镜像已经是taobao了1234567 npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/* taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 接下来就可以正常用npm安装依赖了，都很方便。]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>NPM</tag>
       </tags>
   </entry>
   <entry>
