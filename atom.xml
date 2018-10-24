@@ -178,9 +178,9 @@
       <category term="技术" scheme="http://www.icnws.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Redis" scheme="http://www.icnws.com/tags/Redis/"/>
-    
       <category term="Docker" scheme="http://www.icnws.com/tags/Docker/"/>
+    
+      <category term="Redis" scheme="http://www.icnws.com/tags/Redis/"/>
     
   </entry>
   
@@ -202,9 +202,9 @@
       <category term="技术" scheme="http://www.icnws.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Spring Boot" scheme="http://www.icnws.com/tags/Spring-Boot/"/>
-    
       <category term="Redis" scheme="http://www.icnws.com/tags/Redis/"/>
+    
+      <category term="Spring Boot" scheme="http://www.icnws.com/tags/Spring-Boot/"/>
     
   </entry>
   
