@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Centos7安装Mariadb]]></title>
+    <url>%2F2018%2F2018Centos7%E5%AE%89%E8%A3%85Mariadb%2F</url>
+    <content type="text"><![CDATA[概要简单记录在Centos7.3下安装Mariadb 10.3,及简单配置 安装Repo设置vim /etc/yum.repos.d/mariadb.repo 写入内容1234567# MariaDB 10.3 CentOS repository list - created 2018-11-05 02:44 UTC# http://downloads.mariadb.org/mariadb/repositories/[mariadb]name = MariaDBbaseurl = http://yum.mariadb.org/10.3/centos7-amd64gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDBgpgcheck=1 如果这里的镜像不满足你的系统需求，可以通过http://downloads.mariadb.org/mariadb/repositories/去选择生成自己系统的镜像配置 安装命令执行命令，等待完成即可 yum -y install MariaDB-server MariaDB-client 系统不同，命令请自行调整。 另，官方镜像下载比较慢，如需切换国内镜像请自己手动调整。 安装完成之后，用 service mysql start 命令进行启动 设置密码执行如下命令并按照步骤设置，初始密码为空，新设置的密码是root的内网访问密码，建议将内网访问密码与外网访问区分开，以防滥用。 mysql_secure_installation 执行完成之后，可以通过 mysql -uroot -p 并输入刚刚设置的密码进行验证密码是否设置成功 配置远程访问通过 mysql -uroot -p 进入数据库，创建用户 create user root@&#39;%&#39; identified by &#39;123456&#39;; 授权所有数据远程访问： grant all privileges on *.* to root@&#39;%&#39; identified by &#39;123456&#39;; 授权所有数据访问并具有授权权限： grant all privileges on *.* to root@&#39;%&#39; identified by &#39;123456&#39; with grant option; 使授权生效： flush privileges; 做好以上几步，可以通过远程客户端链接数据库了。记得打开服务器对应数据库端口的外网访问权限。 更改数据存储目录更改目录前先停掉mysql服务，service mysql stop 备份配置文件 cp /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf.bak 增加数据目录 vim /etc/my.cnf.d/server.cnf12[mysqld]datadir=/data/mysql 赋予目录权限 chown -R mysql:mysql /data/mysql 复制数据文件,安装完成后的数据库存储位置是/var/lib/mysql cp -a /var/lib/mysql/* /data/mysql 重新启动mysql服务，即可访问 记录慢sql增加server配置 vim /etc/my.cnf.d/server.cnf12345[mysqld]datadir=/mnt/mysql/dataslow_query_log=onslow_query_log_file=/data/mysql/logs/slow_query_log.loglong_query_time=2 这里一定要创建logs对应的文件夹，设置完成重启服务即可 service mysql restart 特殊字符问题微信昵称、富文本编辑等有特殊字符无法存储的问题，需要数据库支持utf8mb4字符集这里需要注意一下，mysql的utf8字符集并不是我们通常所用的utf8，而是mysql自己定义的一套字符集名字叫utf8,和我们通常所用的utf8字符集对应的是utf8mb4。 增加server配置 vim /etc/my.cnf.d/server.cnf123456[mysqld]datadir=/mnt/mysql/dataslow_query_log=onslow_query_log_file=/data/mysql/logs/slow_query_log.loglong_query_time=2character_set_server=utf8mb4 设置完成重启服务即可 service mysql restart 大小写敏感问题Linux下大小写敏感，可以统一成小写 增加server配置 vim /etc/my.cnf.d/server.cnf1234567[mysqld]datadir=/mnt/mysql/dataslow_query_log=onslow_query_log_file=/data/mysql/logs/slow_query_log.loglong_query_time=2character_set_server=utf8mb4lower_case_table_names = 1 设置完成重启服务即可 到此，安装和配置都完成了。]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Mariadb</tag>
+        <tag>Centos7</tag>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微信小程序调研-打开小程序的支持]]></title>
     <url>%2F2018%2F2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%943%2F</url>
     <content type="text"><![CDATA[调研内容对打开小程序、APP的支持，有哪些功能？有哪些限制？有没有突破的方法？ 调研结果小程序到小程序一个小程序要跳转到另一个小程序，两个小程序必须绑定在同一公众号上，也可以跳回来 同一个小程序最多可以跳转到10个小程序里，这是微信限制，可能后期会逐渐放开 同一个小程序可关联最多500个公众号。 公众号可关联同主体的10个小程序及不同主体的3个小程序。 小程序到APP此功能需要用户主动触发才能打开 APP，所以不由 API 来调用，需要用 open-type 的值设置为 launchApp 的 组件的点击来触发。 虽然可以打开，但是需要做很多工作，而且是特殊场景的使用。APP首先要集成相关SDK，用户通过APP分享消息卡片到微信，然后用户再通过点击消息卡片，进入小程序，通过按钮打开APP.目前看到集成SDK然后进行分享，由原来的分享微信页面改为分享微信小程序，能一定程度上提升用户体验，打开APP的功能还是比较少见。详情参见：https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html]]></content>
@@ -46,17 +59,6 @@
       <tags>
         <tag>Wechat</tag>
         <tag>MiniProgram</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[使用npm小技巧]]></title>
-    <url>%2F2018%2F2018%E4%BD%BF%E7%94%A8npm%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[背景使用npm经常会遇到加载某个依赖加载不了，所以需要用国内的淘宝镜像 然而，将npm改成cnpm是极不习惯的，所以看到nrm就赶紧记下来了，极是好用！ 安装使用安装nrmnpm install nrm -g --registry=https://registry.npm.taobao.org 查看镜像nrm ls 结果如下1234567* npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/ taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 使用镜像nrm use taobao 通过命令nrm ls可以看到，镜像已经是taobao了1234567 npm ---- https://registry.npmjs.org/ cnpm --- http://r.cnpmjs.org/* taobao - https://registry.npm.taobao.org/ nj ----- https://registry.nodejitsu.com/ rednpm - http://registry.mirror.cqupt.edu.cn/ npmMirror https://skimdb.npmjs.com/registry/ edunpm - http://registry.enpmjs.org/ 接下来就可以正常用npm安装依赖了，都很方便。]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>NPM</tag>
       </tags>
   </entry>
 </search>

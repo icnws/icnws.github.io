@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.icnws.com/"/>
-  <updated>2018-10-30T11:08:13.846Z</updated>
+  <updated>2018-11-05T04:43:14.123Z</updated>
   <id>http://www.icnws.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos7安装Mariadb</title>
+    <link href="http://www.icnws.com/2018/2018Centos7%E5%AE%89%E8%A3%85Mariadb/"/>
+    <id>http://www.icnws.com/2018/2018Centos7安装Mariadb/</id>
+    <published>2018-11-05T13:19:05.000Z</published>
+    <updated>2018-11-05T04:43:14.123Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><p>简单记录在Centos7.3下安装Mariadb 10.3,及简单配置<br><a id="more"></a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="Repo设置"><a href="#Repo设置" class="headerlink" title="Repo设置"></a>Repo设置</h4><p><code>vim /etc/yum.repos.d/mariadb.repo</code></p><p>写入内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># MariaDB 10.3 CentOS repository list - created 2018-11-05 02:44 UTC</span><br><span class="line"># http://downloads.mariadb.org/mariadb/repositories/</span><br><span class="line">[mariadb]</span><br><span class="line">name = MariaDB</span><br><span class="line">baseurl = http://yum.mariadb.org/10.3/centos7-amd64</span><br><span class="line">gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB</span><br><span class="line">gpgcheck=1</span><br></pre></td></tr></table></figure></p><p>如果这里的镜像不满足你的系统需求，可以通过<a href="http://downloads.mariadb.org/mariadb/repositories/去选择生成自己系统的" target="_blank" rel="noopener">http://downloads.mariadb.org/mariadb/repositories/去选择生成自己系统的</a><br>镜像配置</p><h4 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h4><p>执行命令，等待完成即可</p><p><code>yum -y install MariaDB-server MariaDB-client</code> </p><p>系统不同，命令请自行调整。</p><p>另，官方镜像下载比较慢，如需切换国内镜像请自己手动调整。</p><p>安装完成之后，用 <code>service mysql start</code> 命令进行启动</p><h4 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h4><p>执行如下命令并按照步骤设置，初始密码为空，新设置的密码是root的内网访问密码，建议将内网访问密码与<br>外网访问区分开，以防滥用。</p><p><code>mysql_secure_installation</code></p><p>执行完成之后，可以通过  <code>mysql -uroot -p</code> 并输入刚刚设置的密码进行验证密码是否设置成功</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><h4 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h4><p>通过 <code>mysql -uroot -p</code> 进入数据库，创建用户</p><p><code>create user root@&#39;%&#39; identified by &#39;123456&#39;;</code> </p><p>授权所有数据远程访问：</p><p><code>grant all privileges on *.* to root@&#39;%&#39; identified by &#39;123456&#39;;</code></p><p>授权所有数据访问并具有授权权限：</p><p><code>grant all privileges on *.* to root@&#39;%&#39; identified by &#39;123456&#39; with grant option;</code></p><p>使授权生效：</p><p><code>flush privileges;</code></p><p>做好以上几步，可以通过远程客户端链接数据库了。记得打开服务器对应数据库端口的外网访问权限。</p><h4 id="更改数据存储目录"><a href="#更改数据存储目录" class="headerlink" title="更改数据存储目录"></a>更改数据存储目录</h4><p>更改目录前先停掉mysql服务，<code>service mysql stop</code></p><p>备份配置文件</p><p><code>cp /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf.bak</code></p><p>增加数据目录</p><p><code>vim /etc/my.cnf.d/server.cnf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/data/mysql</span><br></pre></td></tr></table></figure></p><p>赋予目录权限</p><p><code>chown -R mysql:mysql /data/mysql</code></p><p>复制数据文件,安装完成后的数据库存储位置是/var/lib/mysql</p><p><code>cp -a /var/lib/mysql/* /data/mysql</code></p><p>重新启动mysql服务，即可访问</p><h4 id="记录慢sql"><a href="#记录慢sql" class="headerlink" title="记录慢sql"></a>记录慢sql</h4><p>增加server配置</p><p><code>vim /etc/my.cnf.d/server.cnf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/mnt/mysql/data</span><br><span class="line">slow_query_log=on</span><br><span class="line">slow_query_log_file=/data/mysql/logs/slow_query_log.log</span><br><span class="line">long_query_time=2</span><br></pre></td></tr></table></figure></p><p>这里一定要创建logs对应的文件夹，设置完成重启服务即可</p><p><code>service mysql restart</code></p><h4 id="特殊字符问题"><a href="#特殊字符问题" class="headerlink" title="特殊字符问题"></a>特殊字符问题</h4><p>微信昵称、富文本编辑等有特殊字符无法存储的问题，需要数据库支持utf8mb4字符集<br>这里需要注意一下，mysql的utf8字符集并不是我们通常所用的utf8，而是mysql自己定义的<br>一套字符集名字叫utf8,和我们通常所用的utf8字符集对应的是utf8mb4。</p><p>增加server配置</p><p><code>vim /etc/my.cnf.d/server.cnf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/mnt/mysql/data</span><br><span class="line">slow_query_log=on</span><br><span class="line">slow_query_log_file=/data/mysql/logs/slow_query_log.log</span><br><span class="line">long_query_time=2</span><br><span class="line">character_set_server=utf8mb4</span><br></pre></td></tr></table></figure></p><p>设置完成重启服务即可</p><p><code>service mysql restart</code></p><h4 id="大小写敏感问题"><a href="#大小写敏感问题" class="headerlink" title="大小写敏感问题"></a>大小写敏感问题</h4><p>Linux下大小写敏感，可以统一成小写</p><p>增加server配置</p><p><code>vim /etc/my.cnf.d/server.cnf</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">datadir=/mnt/mysql/data</span><br><span class="line">slow_query_log=on</span><br><span class="line">slow_query_log_file=/data/mysql/logs/slow_query_log.log</span><br><span class="line">long_query_time=2</span><br><span class="line">character_set_server=utf8mb4</span><br><span class="line">lower_case_table_names = 1</span><br></pre></td></tr></table></figure></p><p>设置完成重启服务即可</p><p>到此，安装和配置都完成了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h3&gt;&lt;p&gt;简单记录在Centos7.3下安装Mariadb 10.3,及简单配置&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.icnws.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Mariadb" scheme="http://www.icnws.com/tags/Mariadb/"/>
+    
+      <category term="Centos7" scheme="http://www.icnws.com/tags/Centos7/"/>
+    
+      <category term="Mysql" scheme="http://www.icnws.com/tags/Mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序调研-打开小程序的支持</title>
@@ -228,30 +254,6 @@
       <category term="Spring Cloud" scheme="http://www.icnws.com/tags/Spring-Cloud/"/>
     
       <category term="Eureka" scheme="http://www.icnws.com/tags/Eureka/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Centos7中安装Nodejs服务</title>
-    <link href="http://www.icnws.com/2017/149-nodejs-in-centos7/"/>
-    <id>http://www.icnws.com/2017/149-nodejs-in-centos7/</id>
-    <published>2017-09-07T11:31:30.000Z</published>
-    <updated>2018-03-15T06:27:28.450Z</updated>
-    
-    <content type="html"><![CDATA[<p>博客迁移到github之后，阿里云服务器闲置了，现在折腾一下，把博客同步到阿里云服务器</p><h3 id="集成工具安装"><a href="#集成工具安装" class="headerlink" title="集成工具安装"></a>集成工具安装</h3><p>由于是新的系统，需要执行安装一些常用的软件：</p><p><code>yum -y install gcc make gcc-c++ openssl-devel wget</code></p><h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><p>执行如下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install nodejs</span><br></pre></td></tr></table></figure><p>遇到问题：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Error: Package: 1:nodejs-6.11.1-1.el7.x86_64 (epel)</span><br><span class="line">           Requires: libhttp_parser.so.2()(64bit)</span><br><span class="line">Error: Package: 1:nodejs-6.11.1-1.el7.x86_64 (epel)</span><br><span class="line">           Requires: http-parser &gt;= 2.7.0</span><br><span class="line"> You could try using --skip-broken to work around the problem</span><br><span class="line"> You could try running: rpm -Va --nofiles --nodigest</span><br></pre></td></tr></table></figure><p>解决办法参考：<a href="https://github.com/Icinga/icinga-vagrant/issues/87" target="_blank" rel="noopener">https://github.com/Icinga/icinga-vagrant/issues/87</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install https://opensource.enda.eu/packages/http-parser-2.7.1-3.el7.x86_64.rpm</span><br></pre></td></tr></table></figure><p>再次执行<code>yum install nodejs</code>可以正常运行，安装完成，检查node版本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@xx xx]# node -v</span><br><span class="line">v6.11.1</span><br><span class="line">[root@xx xx]# npm -v</span><br><span class="line">3.10.10</span><br></pre></td></tr></table></figure><p>至此，安装完成，可以正常使用了！</p><hr><p>简单记录，有待深入挖坑！欢迎留言交流！</p>]]></content>
-    
-    <summary type="html">
-    
-      博客迁移到github之后，阿里云服务器闲置了，现在折腾一下，把博客同步到阿里云服务器
-    
-    </summary>
-    
-      <category term="技术" scheme="http://www.icnws.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Centos7" scheme="http://www.icnws.com/tags/Centos7/"/>
-    
-      <category term="Nodejs" scheme="http://www.icnws.com/tags/Nodejs/"/>
     
   </entry>
   
