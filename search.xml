@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>微信小程序调研-支付的支持</title>
+      <link href="/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%944/"/>
+      <url>/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%944/</url>
+      
+        <content type="html"><![CDATA[<h3 id="调研内容"><a href="#调研内容" class="headerlink" title="调研内容"></a>调研内容</h3><p>对支付的支持，有哪些功能？有哪些限制？有没有突破的方法？</p><a id="more"></a><h3 id="调研结果"><a href="#调研结果" class="headerlink" title="调研结果"></a>调研结果</h3><h4 id="小程序支付"><a href="#小程序支付" class="headerlink" title="小程序支付"></a>小程序支付</h4><p>小程序的支付可以通过APPID绑定已有微信支付或申请微信支付账号，调用小程序相关支付API，完成支付。</p><h5 id="小程序内网页支付"><a href="#小程序内网页支付" class="headerlink" title="小程序内网页支付"></a>小程序内网页支付</h5><p>由于小程序嵌入的网页中，并不是JSSDK的所有API都支持，只支持部分API，而恰恰JSSDK支付不支持，所以还需要绕回到小程序的微信支付<br>两种方式，一种是直接通过网页与小程序的交互完成交互，后端要完成相关账单对接。另一种是通过网页自己服务自己，自己生成相关的支付码，<br>返回给用户，用户通过扫码完成支付，但是这个方案还需要进一步测试。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Wechat </tag>
+            
+            <tag> MiniProgram </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Centos7安装Mariadb</title>
       <link href="/2018/2018Centos7%E5%AE%89%E8%A3%85Mariadb/"/>
       <url>/2018/2018Centos7%E5%AE%89%E8%A3%85Mariadb/</url>
@@ -319,9 +344,9 @@
       
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Redis </tag>
+            
+            <tag> Docker </tag>
             
         </tags>
       
@@ -344,9 +369,9 @@
       
         <tags>
             
-            <tag> Redis </tag>
-            
             <tag> Spring Boot </tag>
+            
+            <tag> Redis </tag>
             
         </tags>
       
@@ -734,9 +759,9 @@
       
         <tags>
             
-            <tag> spring-data-jpa </tag>
-            
             <tag> specification </tag>
+            
+            <tag> spring-data-jpa </tag>
             
         </tags>
       
@@ -784,9 +809,9 @@
       
         <tags>
             
-            <tag> spring-data-jpa </tag>
-            
             <tag> specification </tag>
+            
+            <tag> spring-data-jpa </tag>
             
         </tags>
       
@@ -907,9 +932,9 @@
       
         <tags>
             
-            <tag> Projection </tag>
-            
             <tag> spring-data-jpa </tag>
+            
+            <tag> Projection </tag>
             
         </tags>
       
