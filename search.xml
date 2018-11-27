@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>微信小程序调研-web-view的使用</title>
+      <link href="/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%945/"/>
+      <url>/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%945/</url>
+      
+        <content type="html"><![CDATA[<h3 id="调研内容"><a href="#调研内容" class="headerlink" title="调研内容"></a>调研内容</h3><p>通过小程序和H5网页数据交互，打通小程序和对应公众号的用户关系</p><a id="more"></a><h3 id="调研结果"><a href="#调研结果" class="headerlink" title="调研结果"></a>调研结果</h3><p>可以通过互传openId的方式，通过加密字符串的校验，可以实现数据互通，这个数据并不是百分百准确，但是具有一定的可靠性</p><h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>通过组件web-view来实现，属性src，具体代码如下</p><p>入口页：有一个确认跳转的弹窗</p><p><code>model/index.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 生命周期函数--监听页面初次渲染完成</span><br><span class="line"> */</span><br><span class="line">onReady: function() &#123;</span><br><span class="line">  //将小程序用户的openId保存</span><br><span class="line">  wx.setStorageSync(&apos;miniOpenId&apos;, &apos;12345656777888&apos;);</span><br><span class="line">  wx.showModal(&#123;</span><br><span class="line">    title: &apos;提示&apos;,</span><br><span class="line">    content: &apos;这是一个模态弹窗&apos;,</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      if (res.confirm) &#123;</span><br><span class="line">        console.log(&apos;用户点击确定&apos;)</span><br><span class="line">        var i = 0;</span><br><span class="line">        if (i = 1)</span><br><span class="line">          wx.navigateTo(&#123;</span><br><span class="line">            url: &apos;/index/index&apos;</span><br><span class="line">          &#125;)</span><br><span class="line">      &#125; else if (res.cancel) &#123;</span><br><span class="line">        console.log(&apos;用户点击取消&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p><p>web-view加载页面</p><p><code>index/index.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  /**</span><br><span class="line">   * 页面的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">    miniOpenId:&apos;&apos;,</span><br><span class="line">    url: &apos;&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  /**</span><br><span class="line">   * 生命周期函数--监听页面加载</span><br><span class="line">   */</span><br><span class="line">  onLoad: function (options) &#123;</span><br><span class="line">    var that = this;</span><br><span class="line">    //获取保存的小程序用户openId</span><br><span class="line">    var miniOpenId = wx.getStorageSync(&apos;miniOpenId&apos;);</span><br><span class="line">    //设置页面加载需要的参数</span><br><span class="line">    that.setData(&#123; url: &apos;https://abc.cn/demo/auth2/code&apos; &#125;);</span><br><span class="line">    that.setData(&#123; miniOpenId: miniOpenId &#125;);</span><br><span class="line">    console.log(miniOpenId);</span><br><span class="line">    </span><br><span class="line">  &#125;,</span><br><span class="line">  //接收h5发送的数据</span><br><span class="line">  //需要注意，只有在特定时间点才能触发该方法</span><br><span class="line">  postMessage(e) &#123;</span><br><span class="line">    console.log(1)</span><br><span class="line">    console.log(e.detail.data[0])</span><br><span class="line">    console.log(e.detail.data[0].openId)</span><br><span class="line">    console.log(e.detail.data[0].count)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p><code>index/index.wxml</code>页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;page-body&quot;&gt;</span><br><span class="line">  &lt;view class=&quot;page-section page-section-gap&quot;&gt;</span><br><span class="line">    &lt;web-view src=&quot;&#123;&#123;url&#125;&#125;?miniOpenId=&#123;&#123;miniOpenId&#125;&#125;&quot; bindmessage=&quot;postMessage&quot;&gt;</span><br><span class="line">    &lt;p &gt;请稍等....&lt;/p&gt;</span><br><span class="line">    &lt;/web-view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure></p><p>微信授权页面 auth.html,这是在springboot下的thymeleaf页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; &gt;&lt;/meta&gt;</span><br><span class="line">    &lt;title&gt;WebView测试&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;!-- jssdk依赖 --&gt;</span><br><span class="line">    &lt;script src=&quot;https://res.wx.qq.com/open/js/jweixin-1.3.2.js&quot; type=&quot;application/javascript&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;h1 align=&quot;center&quot;&gt;小程序WebView测试&lt;/h1&gt;</span><br><span class="line">    &lt;div align=&quot;center&quot; style=&quot;background-color: aquamarine;margin:10px;padding: 10px;width: auto;height: 180px;align-content: center&quot;&gt;</span><br><span class="line">        &lt;button style=&quot;width: 320px;height: 180px;font-size: xx-large&quot; onclick=&quot;comeback1()&quot;&gt;&lt;h1&gt;原页面&lt;/h1&gt;&lt;/button&gt;</span><br><span class="line">        &lt;button style=&quot;width: 320px;height: 180px;font-size: xx-large&quot; onclick=&quot;comeback2()&quot;&gt;&lt;h1&gt;重定向&lt;/h1&gt;&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script th:inline=&quot;javascript&quot;&gt;</span><br><span class="line">    //后端传的openId</span><br><span class="line">    var openId = [[$&#123;openId&#125;]];</span><br><span class="line">    console.log(openId);</span><br><span class="line">    var count = 1;</span><br><span class="line">    //发送数据到小程序</span><br><span class="line">    wx.miniProgram.postMessage(&#123; data: &#123;&quot;openId&quot;: openId,&quot;count&quot;:count&#125; &#125;)</span><br><span class="line">    //原路返回</span><br><span class="line">    function comeback1() &#123;</span><br><span class="line">        wx.miniProgram.navigateBack()</span><br><span class="line">    &#125;</span><br><span class="line">    //重定向到新页面</span><br><span class="line">    function comeback2() &#123;</span><br><span class="line">        wx.miniProgram.redirectTo(&#123;url: &apos;/m2/index&apos;&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p><p>代码放到csdn上了，<a href="https://download.csdn.net/download/defxino/10811121" target="_blank" rel="noopener">https://download.csdn.net/download/defxino/10811121</a><br>如果没积分就给我发邮件吧，主题中说明是干嘛的，我会给你发,mailto:<a href="mailto:dujc1018@gmail.com" target="_blank" rel="noopener">dujc1018@gmail.com</a></p><p>里面有很多坑，需要慢慢踩！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Wechat </tag>
+            
+            <tag> MiniProgram </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>微信小程序调研-支付的支持</title>
       <link href="/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%944/"/>
       <url>/2018/2018%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%A0%944/</url>
@@ -44,9 +69,9 @@
       
         <tags>
             
-            <tag> Mariadb </tag>
-            
             <tag> Centos7 </tag>
+            
+            <tag> Mariadb </tag>
             
             <tag> Mysql </tag>
             
@@ -759,9 +784,9 @@
       
         <tags>
             
-            <tag> specification </tag>
-            
             <tag> spring-data-jpa </tag>
+            
+            <tag> specification </tag>
             
         </tags>
       
@@ -809,9 +834,9 @@
       
         <tags>
             
-            <tag> specification </tag>
-            
             <tag> spring-data-jpa </tag>
+            
+            <tag> specification </tag>
             
         </tags>
       
@@ -932,9 +957,9 @@
       
         <tags>
             
-            <tag> spring-data-jpa </tag>
-            
             <tag> Projection </tag>
+            
+            <tag> spring-data-jpa </tag>
             
         </tags>
       
